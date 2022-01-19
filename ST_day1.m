@@ -1,9 +1,9 @@
 function ST_day1(imgdir,scanID,sessNums,resultsDir,behFilePath,subjectID)
 % example inputs:
-% imgdir = 'D:\Research_local\SchemRep\data_sample\Func\20211208_03365\'
-% resultsDir='D:\Research_local\SchemRep\data_sample\singletrial_test_202\'; %%%
+% imgdir = 'D:\data_sample\Func\20211208_03365\'
+% resultsDir='D:\data_sample\singletrial_test_202\'; %%%
 % sessNums = {'004', '005', '006'}
-% behFilePath = 'D:\Research_local\SchemRep\data_sample\behavFiles\ENC\'
+% behFilePath = 'D:\data_sample\behavFiles\ENC\'
 % subjectID = 'S202'
 
 funcImgs={...
@@ -26,9 +26,9 @@ for i=1:3 %3 runs
     assert(length(onsets)==38); % OK
     %
     nuaregr=fullfile(imgdir, ['regressors_', scanID, '_', sessNums{i}, '.mat']);
-    % example: 'D:\Research_local\SchemRep\data_sample\Func\20211208_03365\regressors_03365_004.mat';
+    % example: 'D:\data_sample\Func\20211208_03365\regressors_03365_004.mat';
     if exist(nuaregr,'file')==0
-        make_nuanceRegressor(...%'D:\Research_local\SchemRep\data_sample\Func\20211208_03365\rp_abia6_03365_004_01.txt',...
+        make_nuanceRegressor(...%'D:\data_sample\Func\20211208_03365\rp_abia6_03365_004_01.txt',...
             fullfile(imgdir, ['rp_abia6_', scanID, '_', sessNums{i}, '_01.txt']),...% 
             funcImgs{i},funcFrames,nuaregr)
     end
