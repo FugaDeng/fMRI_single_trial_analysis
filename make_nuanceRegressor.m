@@ -1,6 +1,6 @@
 function make_nuanceRegressor(motionfName,imgName,timepoints,saveName)
 
-%% this function adds white matter and csf signal to the motion regressor and keeps
+%% this function adds white matter and csf signal to the motion regressor and keeps 
 % the timepoints you are interested (i.e., removes the first few volumes)
 
 %%
@@ -15,9 +15,9 @@ fclose(fID);
 
 %% CHANGE THIS SECTION WHEN MOVING TO CLUSTER
 addpath('D:\MATLABlib\NIfTI_toobox') %!!
-wmask=load_nii('D:\Research_local\SchemRep\data_sample\resample_atlases\WhiteMask_3mm_53x63x52.nii');
+wmask=load_nii('D:\data_sample\resample_atlases\WhiteMask_3mm_53x63x52.nii');
 wmask=wmask.img;
-csfmask=load_nii('D:\Research_local\SchemRep\data_sample\resample_atlases\CsfMask_3mm_53x63x52.nii');
+csfmask=load_nii('D:\data_sample\resample_atlases\CsfMask_3mm_53x63x52.nii');
 csfmask=csfmask.img;
 %%
 
